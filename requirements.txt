@@ -1,0 +1,8 @@
+gradio==5.38.2
+faiss-cpu==1.11.0
+sentence-transformers==5.0.0
+numpy==2.3.1
+requests==2.32.4
+python-dotenv==1.1.1
+torch
+transformers
