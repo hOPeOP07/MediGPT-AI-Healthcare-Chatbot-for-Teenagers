@@ -92,8 +92,15 @@ def ask_groq(prompt):
         return data["choices"][0]["message"]["content"]
 
     except Exception as e:
-        print("REQUEST FAILED:", str(e))
-        return "System temporarily unavailable."
+    import traceback
+
+    print("\n" + "="*60)
+    print("MEDIGPT RUNTIME ERROR")
+    print("="*60)
+    traceback.print_exc()
+    print("="*60 + "\n")
+
+    return f"ERROR: {str(e)}"
 
 # ---------------- MAIN FUNCTION ----------------
 def answer_question(user_question):
