@@ -17,4 +17,9 @@ with gr.Blocks(title="MEDIGPT") as demo:
         chatbot=gr.Chatbot(height=500)
     )
 
-demo.launch()
+import os
+
+demo.launch(
+    server_name="0.0.0.0",
+    server_port=int(os.environ.get("PORT", 7860))
+)
