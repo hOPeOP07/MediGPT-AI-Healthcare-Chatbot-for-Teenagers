@@ -61,10 +61,9 @@ Answer:
 """
 
 # ---------------- GROQ CALL ----------------
+# ---------------- GROQ CALL ----------------
 def ask_groq(prompt):
     try:
-        
-
         response = requests.post(
             GROQ_URL,
             headers={
@@ -87,20 +86,20 @@ def ask_groq(prompt):
 
         if "error" in data:
             print("GROQ ERROR:", data["error"]["message"])
-            return "System temporarily busy. Please try again."
+            return f"GROQ ERROR: {data['error']['message']}"
 
         return data["choices"][0]["message"]["content"]
 
     except Exception as e:
-    import traceback
+        import traceback
 
-    print("\n" + "="*60)
-    print("MEDIGPT RUNTIME ERROR")
-    print("="*60)
-    traceback.print_exc()
-    print("="*60 + "\n")
+        print("\n" + "=" * 60)
+        print("MEDIGPT RUNTIME ERROR")
+        print("=" * 60)
+        traceback.print_exc()
+        print("=" * 60 + "\n")
 
-    return f"ERROR: {str(e)}"
+        return f"ERROR: {str(e)}"
 
 # ---------------- MAIN FUNCTION ----------------
 def answer_question(user_question):
