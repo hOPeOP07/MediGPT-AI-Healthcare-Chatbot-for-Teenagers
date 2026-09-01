@@ -106,6 +106,8 @@ The research focuses on reducing hallucination in healthcare conversational AI u
 
 ---
 
+Note: MEDIGPT is an educational AI healthcare assistant for awareness purposes and is not a substitute for professional medical advice.
+
 ## 👨‍💻 Author
 
 **Shikhar Chaturvedi**
